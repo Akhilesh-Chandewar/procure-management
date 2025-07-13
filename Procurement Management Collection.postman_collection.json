@@ -1,0 +1,476 @@
+{
+	"info": {
+		"_postman_id": "1a163b2e-a65b-49f7-b944-e6606910fb6e",
+		"name": "Procurement Management Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16304133"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"item": [
+				{
+					"name": "Health check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/health",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Environmental check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/env",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"env"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Database check",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/db",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"admin0\",\n    \"lastName\": \"admin0\",\n    \"email\": \"admin@mail.com\",\n    \"mobile\": \"1234567890\",\n    \"password\": \"admin12@!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/admin",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Procure Manager",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"procure0\",\n    \"lastName\": \"manager0\",\n    \"email\": \"procure.manager0@mail.com\",\n    \"mobile\": \"1234567891\",\n    \"password\": \"procure12@!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/procure-manager",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"procure-manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Inspection Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"inpector0\",\n    \"lastName\": \"inspector0\",\n    \"email\": \"inspector@mail.com\",\n    \"mobile\": \"1234567892\",\n    \"password\": \"inspector12@!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/inspection-manager",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"inspection-manager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"client0\",\n    \"lastName\": \"client0\",\n    \"email\": \"clent@mail.com\",\n    \"mobile\": \"1234567893\",\n    \"password\": \"admin12@!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/client",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"procure.manager0@mail.com\",\n    \"password\": \"procure12@!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"akhil.chandewar00@gmail.com\",\n    \"password\": \"Akhil12@!\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/logout",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get logged in user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@mail.com\",\n    \"password\": \"admin12@!\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/me",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"client0\",\n    \"lastName\": \"client0\",\n    \"email\": \"clent@mail.com\",\n    \"mobile\": \"1234567893\",\n    \"password\": \"admin12@!\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/user/get-users",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"user",
+								"get-users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientId\" : \"685bb5ff977a7dab9bb3add9\",\n    \"description\": \"order0 decription\",\n    \"requirements\" : \"order0 requirement\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/order/create",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign inspection manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"inspectionManagerId\" : \"685bb5ea977a7dab9bb3add4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/order/assign-inspection-to-order/685bb837977a7dab9bb3aded",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"order",
+								"assign-inspection-to-order",
+								"685bb837977a7dab9bb3aded"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clientId\" : \"685a8b07fdb227c16c16f303\",\n    \"description\": \"order0 decription\",\n    \"requirements\" : \"order0 requirement\"\n}"
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/order/get-order-status/685bb6dc977a7dab9bb3ade0",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"order",
+								"get-order-status",
+								"685bb6dc977a7dab9bb3ade0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checklist",
+			"item": [
+				{
+					"name": "Create new checklist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"checklist name 0\",\n    \"description\" : \"checklist description 0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/checklist/create/685bb837977a7dab9bb3aded",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"checklist",
+								"create",
+								"685bb837977a7dab9bb3aded"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add questions to checklist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"questions\": [\n    {\n      \"question\": \"Question 1\",\n      \"type\": \"text\",\n      \"isRequired\": true\n    },\n    {\n      \"question\": \"Question 2\",\n      \"type\": \"single_choice\",\n      \"options\": [\"Yes\", \"No\"],\n      \"isRequired\": true\n    },\n    {\n      \"question\": \"Question 3\",\n      \"type\": \"multiple_choice\",\n      \"options\": [\"Item A\", \"Item B\", \"Item C\"],\n      \"isRequired\": false\n    },\n    {\n      \"question\": \"Question 4\",\n      \"type\": \"single_choice\",\n      \"options\": [\"Procurement\", \"Inspection\", \"Logistics\"],\n      \"isRequired\": true\n    },\n    {\n      \"question\": \"Question 5\",\n      \"type\": \"summary\",\n      \"isRequired\": false\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/checklist/add-question/685bb837977a7dab9bb3aded",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"checklist",
+								"add-question",
+								"685bb837977a7dab9bb3aded"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"responses\": [\n    {\n      \"questionId\": \"685aa5fdc96d179c95d35351\",  \n      \"answerText\": \"This is a response to text question\"\n    },\n    {\n      \"questionId\": \"685aa61af7cc48f834df8bc9\", \n      \"selectedOptions\": [\"Yes\"]\n    },\n    {\n      \"questionId\": \"685aa61af7cc48f834df8bca\", \n      \"selectedOptions\": [\"Item A\", \"Item C\"]\n    },\n    {\n      \"questionId\": \"685aa61af7cc48f834df8bcb\", \n      \"selectedOptions\": [\"Procurement\"]\n    },\n    {\n      \"questionId\": \"685aa61af7cc48f834df8bcc\", \n      \"answerText\": \"Checklist summary: everything verified.\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/{{api version}}/checklist/add-response/685a926863602f3cd6eb0c0f",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"{{api version}}",
+								"checklist",
+								"add-response",
+								"685a926863602f3cd6eb0c0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
